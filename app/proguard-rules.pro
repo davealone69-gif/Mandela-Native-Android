@@ -1,2 +1,2 @@
 # Keep Moshi / Retrofit models
--keep class com.example.** { *; }
+-keep class com.mandelamatrix.reimaginator.** { *; }

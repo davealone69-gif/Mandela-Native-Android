@@ -1,37 +1,34 @@
-# Mandela Native Android
+# Mandela Native Android — Version 1.0
 
-**Clean native Android build** combining the working parts from the Workshop Manual Organiser into a fresh Mandela Re-imaginator foundation.
+**Package:** `com.mandelamatrix.reimaginator`  
+**Version:** 1.0 (versionCode 1)
 
-This is a **totally new repo** — separate from the hybrid Capacitor version.
+Clean native Android build combining Workshop working parts into Mandela Re-imaginator.
 
-## Features (from Workshop)
-- Dashboard with recent manuals + search
-- Manual Library with tags, import, AI scan simulation
-- AI VIN Plate Decoder (camera)
-- Manual Viewer with TTS + Gemini chat side panel
-- Scanner / Digitize Manual flow
-- Collaboration / Safety alerts
-- Settings (theme + font)
-- Full Gemini streaming chat (Flash + Pro thinking mode)
+## Build the APK (required to get the file)
 
-## Tech Stack
-- Kotlin
-- Jetpack Compose (Material 3)
-- Navigation Compose
-- Retrofit + Moshi + OkHttp (Gemini API)
-- Modern Gradle Kotlin DSL + Version Catalog
-- Secrets Gradle Plugin for `GEMINI_API_KEY`
+This environment cannot compile Android APKs. Build on your machine or CI:
 
-## Quick Start
-1. Open this folder in **Android Studio**
-2. Copy `.env.example` → `.env` and add your Gemini API key
-3. Sync Gradle
-4. Run on emulator or device
-5. Build APK:
-   ```bash
-   ./gradlew assembleDebug
-   # or assembleRelease (needs keystore)
-   ```
+### Option A — Android Studio (easiest)
+1. Clone: `git clone https://github.com/davealone69-gif/Mandela-Native-Android.git`
+2. Open the folder in **Android Studio**
+3. Copy `.env.example` → `.env` and set `GEMINI_API_KEY=...`
+4. **Build → Build Bundle(s) / APK(s) → Build APK(s)**
+5. APK path: `app/build/outputs/apk/debug/app-debug.apk`
 
-## Package
-Currently `com.example` (easy to change later to `com.mandelamatrix.reimaginator`).
+### Option B — Command line
+```bash
+cd Mandela-Native-Android
+cp .env.example .env   # then edit GEMINI_API_KEY
+./gradlew assembleDebug
+# APK: app/build/outputs/apk/debug/app-debug.apk
+```
+
+Install on phone:
+```bash
+adb install app/build/outputs/apk/debug/app-debug.apk
+```
+
+## Features
+- Dashboard, Library, VIN decoder, Scanner, Gemini chat, Settings
+- Package renamed from com.example → com.mandelamatrix.reimaginator

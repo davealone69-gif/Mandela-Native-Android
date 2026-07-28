@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-  namespace = "com.example"
+  namespace = "com.mandelamatrix.reimaginator"
   compileSdk = 35
 
   defaultConfig {
-    applicationId = "com.example"
+    applicationId = "com.mandelamatrix.reimaginator"
     minSdk = 24
     targetSdk = 35
     versionCode = 1
@@ -33,7 +33,6 @@ android {
       proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
     }
     debug {
-      // signingConfig = signingConfigs.getByName("debugConfig") // uncomment if you add debug.keystore
     }
   }
 
