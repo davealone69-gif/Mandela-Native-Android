@@ -563,18 +563,27 @@ fun CollaborationScreen() {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AIScreen() {
-    Column(Modifier.fillMaxSize().padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center) {
-        Icon(Icons.Filled.AutoAwesome, null, Modifier.size(64.dp),
-            tint = MaterialTheme.colorScheme.primary)
-        Spacer(Modifier.height(16.dp))
-        Text("AI Auto-Tagging & OCR", style = MaterialTheme.typography.headlineMedium,
-            color = MaterialTheme.colorScheme.primary)
-        Spacer(Modifier.height(8.dp))
-        Text("Open a manual and use the AI chat panel for assistance.")
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Icon(Icons.Filled.AutoAwesome, null,
+                            tint = MaterialTheme.colorScheme.primary,
+                            modifier = Modifier.size(22.dp))
+                        Spacer(Modifier.width(8.dp))
+                        Text("Gemini AI Assistant")
+                    }
+                }
+            )
+        }
+    ) { innerPadding ->
+        Box(Modifier.padding(innerPadding).fillMaxSize()) {
+            AIChatContent()
+        }
     }
 }
 
