@@ -23,14 +23,8 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
-
-      - name: Make gradlew executable
-        run: |
-          if [ -f gradlew ]; then
-            chmod +x gradlew
-          else
-            echo "No local gradlew, using Gradle from action"
-          fi
+        with:
+          gradle-version: '8.7'
 
       - name: Fix missing debug.keystore reference
         run: |
@@ -39,12 +33,7 @@ jobs:
           sed -i '/create("debugConfig")/,/}/d' app/build.gradle.kts || true
 
       - name: Build Debug APK
-        run: |
-          if [ -f gradlew ]; then
-            ./gradlew assembleDebug --stacktrace --no-daemon
-          else
-            gradle assembleDebug --stacktrace --no-daemon
-          fi
+        run: gradle assembleDebug --stacktrace --no-daemon
 
       - name: Upload APK as GitHub Artifact
         uses: actions/upload-artifact@v4
