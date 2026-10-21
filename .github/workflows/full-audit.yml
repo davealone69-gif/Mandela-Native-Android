@@ -37,7 +37,7 @@ jobs:
       - name: Set up Gradle 8.7
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: "8.7"
+          gradle-version: "8.9"
 
       - name: Gradle build, lint, and unit tests
         run: gradle lint test assembleDebug --continue --stacktrace --no-daemon
