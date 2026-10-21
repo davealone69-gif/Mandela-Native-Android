@@ -2,7 +2,8 @@ name: Build Real APK
 
 on:
   push:
-    branches: [main, master]
+    branches: [main, master, 'fix/**']
+  pull_request:
   workflow_dispatch:
 
 jobs:
@@ -20,11 +21,13 @@ jobs:
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '8.7'
+          gradle-version: '8.9'
 
       - name: Fix missing debug.keystore reference
         run: |

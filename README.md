@@ -1,34 +1,16 @@
-# Mandela Native Android — Version 1.0
+# Mandela Native Android
 
-**Package:** `com.mandelamatrix.reimaginator`  
-**Version:** 1.0 (versionCode 1)
+## Download the APK
 
-Clean native Android build combining Workshop working parts into Mandela Re-imaginator.
+- [Builds and Debug APK artifacts](https://github.com/davealone69-gif/Mandela-Native-Android/actions/workflows/build-apk.yml). Open a successful run and download the `app-debug-apk` artifact. GitHub may require you to sign in.
+- [GitHub Releases](https://github.com/davealone69-gif/Mandela-Native-Android/releases).
+- [Full repository audit runs](https://github.com/davealone69-gif/Mandela-Native-Android/actions/workflows/full-audit.yml).
+- [Current Android build repair pull request](https://github.com/davealone69-gif/Mandela-Native-Android/pull/1).
 
-## Build the APK (required to get the file)
+## Build status
 
-This environment cannot compile Android APKs. Build on your machine or CI:
+The build workflow has been updated to use Gradle 8.9 to match the Android Gradle Plugin requirement. Check the live build link above for the latest result. A successful CI build is not a phone installation/runtime test.
 
-### Option A — Android Studio (easiest)
-1. Clone: `git clone https://github.com/davealone69-gif/Mandela-Native-Android.git`
-2. Open the folder in **Android Studio**
-3. Copy `.env.example` → `.env` and set `GEMINI_API_KEY=...`
-4. **Build → Build Bundle(s) / APK(s) → Build APK(s)**
-5. APK path: `app/build/outputs/apk/debug/app-debug.apk`
+## Local build
 
-### Option B — Command line
-```bash
-cd Mandela-Native-Android
-cp .env.example .env   # then edit GEMINI_API_KEY
-./gradlew assembleDebug
-# APK: app/build/outputs/apk/debug/app-debug.apk
-```
-
-Install on phone:
-```bash
-adb install app/build/outputs/apk/debug/app-debug.apk
-```
-
-## Features
-- Dashboard, Library, VIN decoder, Scanner, Gemini chat, Settings
-- Package renamed from com.example → com.mandelamatrix.reimaginator
+The CI workflow is the source of truth for the current SDK, Java, and Gradle versions. Do not treat the app as fully verified until the APK has been installed and its main flows tested on an Android device.
