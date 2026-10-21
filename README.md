@@ -32,3 +32,9 @@ adb install app/build/outputs/apk/debug/app-debug.apk
 ## Features
 - Dashboard, Library, VIN decoder, Scanner, Gemini chat, Settings
 - Package renamed from com.example → com.mandelamatrix.reimaginator
+
+
+## Android APK download
+
+- [Open GitHub Actions APK builds and download artifacts](https://github.com/davealone69-gif/Mandela-Native-Android/actions/workflows/build-apk.yml). Open the latest successful run and download its APK artifact.
+- [Open GitHub Releases](https://github.com/davealone69-gif/Mandela-Native-Android/releases) for versioned APKs.
