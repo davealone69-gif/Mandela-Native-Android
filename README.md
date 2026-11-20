@@ -36,5 +36,11 @@ adb install app/build/outputs/apk/debug/app-debug.apk
 
 ## Android APK download
 
+[**⬇ Download latest debug APK**](https://github.com/davealone69-gif/Mandela-Native-Android/releases/latest/download/latest-debug.apk)
+
+This link is refreshed after each successful Android build on `main`. It is a debug/test APK, not a production-signed release.
+
+
+
 - [Open GitHub Actions APK builds and download artifacts](https://github.com/davealone69-gif/Mandela-Native-Android/actions/workflows/build-apk.yml). Open the latest successful run and download its APK artifact.
 - [Open GitHub Releases](https://github.com/davealone69-gif/Mandela-Native-Android/releases) for versioned APKs.
